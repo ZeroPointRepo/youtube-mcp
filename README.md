@@ -6,7 +6,7 @@
   </a>
 </p>
 
-<h1 align="center">💯 YouTube Transcript + YouTube Search MCP for AI Agents</h1>
+<h1 align="center">YouTube Transcript + YouTube Search MCP for AI Agents</h1>
 
 <p align="center">
   <b>The fastest YouTube transcript + YouTube search MCP for AI agents. Try for free.</b><br/>
