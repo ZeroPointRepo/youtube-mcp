@@ -1,57 +1,68 @@
-![Cover](public/YouTube_Transcript_MCP–TranscriptAPI.png)
+<!-- mcp-name: com.transcriptapi/youtube-transcript-and-youtube-search -->
 
-[![Install MCP Server](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=transcript-api&config=eyJ1cmwiOiJodHRwczovL3RyYW5zY3JpcHRhcGkuY29tL21jcCJ9) [<img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_TranscriptAPI_MCP-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white">](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22transcript-api%22%2C%22url%22%3A%22https%3A%2F%2Ftranscriptapi.com%2Fmcp%22%7D)
+<p align="center">
+  <a href="https://transcriptapi.com">
+    <img src="public/brand/logo-512.png" width="160" height="160" alt="TranscriptAPI" />
+  </a>
+</p>
 
-# TranscriptAPI MCP - Get YouTube Transcripts Everywhere
+<h1 align="center">💯 YouTube Transcript + YouTube Search MCP for AI Agents</h1>
 
-> Production-grade YouTube transcript extraction for Claude, ChatGPT, Cursor, and 20+ AI tools.
-> 200K+ transcripts processed every day. Trusted by YouTubeToTranscript.com & Recapio.com.
+<p align="center">
+  <b>The fastest YouTube transcript + YouTube search MCP for AI agents. Try for free.</b><br/>
+  Six tools — transcripts, video search, channel browsing, in-channel search, playlist extraction, and new-upload polling — for Claude, ChatGPT, Cursor, VS Code, Claude Code, and 20+ clients.
+</p>
 
-[![Website](https://img.shields.io/badge/Website-transcriptapi.com-FF3B00?style=flat)](https://transcriptapi.com) [![Documentation](https://img.shields.io/badge/Docs-API_Reference-06B6D4?style=flat)](https://transcriptapi.com/docs) [![Swagger](https://img.shields.io/badge/Swagger-Try_API-85EA2D?style=flat&logo=swagger)](https://transcriptapi.com/swagger) [![License](https://img.shields.io/badge/License-MIT-green?style=flat)](./LICENSE)
+<p align="center">
+  <a href="https://cursor.com/en/install-mcp?name=transcript-api&config=eyJ1cmwiOiJodHRwczovL3RyYW5zY3JpcHRhcGkuY29tL21jcCJ9"><img alt="Install in Cursor" src="https://cursor.com/deeplink/mcp-install-dark.svg"/></a>
+  <a href="https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22transcript-api%22%2C%22url%22%3A%22https%3A%2F%2Ftranscriptapi.com%2Fmcp%22%7D"><img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_TranscriptAPI_MCP-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white"/></a>
+</p>
 
-## ❌ Without TranscriptAPI
+<p align="center">
+  <a href="https://transcriptapi.com"><img src="https://img.shields.io/badge/Website-transcriptapi.com-FF3B00?style=flat" alt="Website"/></a>
+  <a href="https://transcriptapi.com/docs"><img src="https://img.shields.io/badge/Docs-API_Reference-06B6D4?style=flat" alt="Docs"/></a>
+  <a href="https://transcriptapi.com/swagger"><img src="https://img.shields.io/badge/Swagger-Try_API-85EA2D?style=flat&logo=swagger" alt="Swagger"/></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat" alt="MIT License"/></a>
+</p>
 
-- ❌ Manual copy-paste from YouTube's clunky transcript UI
-- ❌ No transcript access during AI conversations
-- ❌ Context switching between browser tabs wastes time
-- ❌ Can't efficiently analyze or compare multiple videos
-- ❌ Building your own scraper is unreliable and breaks often
+> **Powering 15M+ transcripts every month** · 500K+ transcripts processed daily · 49ms median response time
+> Trusted in production by [youtubetotranscript.com](https://youtubetotranscript.com) (~11M/mo) and [recapio.com](https://recapio.com) (~2.8M/mo).
 
-## ✅ With TranscriptAPI
+---
 
-- ✅ Paste any YouTube URL, get instant transcript
-- ✅ Works seamlessly inside your AI workflow
-- ✅ Analyze, summarize, translate videos in natural conversation
-- ✅ Compare multiple videos side-by-side
-- ✅ Production-grade reliability with 200K+ daily transcripts
+## Why TranscriptAPI MCP
 
-**Quick Demo:**
+Most YouTube MCP servers do one thing — pull a single transcript. **TranscriptAPI MCP is a full toolkit**: transcripts, video search, channel search, channel browsing, playlist extraction, and free RSS-based upload tracking — all from one remote endpoint, all designed for AI agents.
+
+|                                          | TranscriptAPI MCP | Typical YouTube MCP |
+| ---------------------------------------- | ----------------- | ------------------- |
+| Hosting                                  | ✅ Remote (no local install) | ❌ Local stdio install |
+| Tools                                    | ✅ 6 tools         | ❌ 1 (transcript only) |
+| YouTube search                           | ✅ Yes             | ❌ No |
+| Channel & playlist extraction            | ✅ Yes             | ❌ No |
+| Latest-uploads monitoring (free)         | ✅ Yes             | ❌ No |
+| OAuth 2.1 + API key auth                 | ✅ Both            | ❌ Usually neither |
+| Production scale (15M+ req/mo)           | ✅ Yes             | ❌ Hobbyist scrapers |
+| Works on mobile Claude & web Claude      | ✅ Yes             | ❌ No |
+| Agent-friendly error messages            | ✅ Yes             | ❌ Bare HTTP codes |
+
+**Quick taste:**
 
 ```txt
-Summarize the key points from this video:
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
+Find Andrew Huberman's three most-viewed videos about sleep,
+get the transcript of each, and write a 5-bullet comparison.
 ```
 
-TranscriptAPI automatically fetches the transcript and your AI analyzes it instantly.
+That single prompt uses 3 of our 6 tools — `search_youtube`, `search_channel_videos`, `get_youtube_transcript` — without you writing a line of code.
 
-## Two Integration Paths
+---
 
-|                 | MCP Integration                      | REST API                                                  |
-| --------------- | ------------------------------------ | --------------------------------------------------------- |
-| **Best For**    | AI assistants & chat interfaces      | Developers & applications                                 |
-| **Setup**       | Zero-code, just add URL              | Code integration required                                 |
-| **Interaction** | Natural language queries             | Programmatic JSON requests                                |
-| **Get Started** | [Installation Guide](#-installation) | [API Documentation →](https://transcriptapi.com/docs/api) |
-
-> **Building an app?** Our REST API gives you full programmatic control with JSON responses, timestamps, and metadata.
-> Base URL: `https://transcriptapi.com/api/v2` | [View Swagger UI →](https://transcriptapi.com/swagger)
-
-## 🛠️ Installation
+## 🛠️ Quick Install
 
 > **Requirements:**
 >
-> - TranscriptAPI account ([sign up free](https://transcriptapi.com))
-> - API Key from [dashboard](https://transcriptapi.com/dashboard/api-keys) OR OAuth (for Claude/ChatGPT)
+> - A TranscriptAPI account ([sign up free](https://transcriptapi.com) — first 100 credits free)
+> - An API key from your [dashboard](https://transcriptapi.com/dashboard/api-keys) **OR** use OAuth (Claude, ChatGPT)
 
 > **Recommended: Add a Rule to Auto-Invoke TranscriptAPI**
 >
@@ -72,7 +83,7 @@ TranscriptAPI automatically fetches the transcript and your AI analyzes it insta
 
 **Manual Configuration:**
 
-Go to: `Settings` -> `Features` -> `MCP` -> `Add New MCP Server`
+Go to: `Settings` → `Features` → `MCP` → `Add New MCP Server`
 
 - **Name:** `transcript-api`
 - **Type:** `SSE` (Remote)
@@ -96,29 +107,26 @@ Or edit `~/.cursor/mcp.json`:
 </details>
 
 <details>
-<summary><b>Install in Claude (Desktop & Web) - Recommended</b></summary>
+<summary><b>Install in Claude (Desktop & Web) — Recommended</b></summary>
 
-Claude now supports adding MCP servers directly via the "Custom Connector" UI.
+Claude supports adding MCP servers directly via the "Custom Connector" UI.
 
 **Quick Setup:**
 
-1. Open Claude Settings (click your profile icon -> Settings)
-2. Go to **Connectors** -> **Add custom connector**
+1. Open Claude Settings (click your profile icon → Settings)
+2. Go to **Connectors** → **Add custom connector**
 3. Enter the following details:
    - **Name:** `TranscriptAPI`
    - **URL:** `https://transcriptapi.com/mcp`
 4. Click **Add**, then click **Connect** to authorize via your browser.
 5. (Optional) In the connector settings, change permissions to "Allow unsupervised" for seamless usage.
 
-**Full Guide:**
-For a comprehensive walkthrough with screenshots, please read our [official Claude Integration Guide](https://transcriptapi.com/docs/mcp/claude).
+**Full Guide:** [Claude Integration Guide →](https://transcriptapi.com/docs/mcp/claude)
 
 </details>
 
 <details>
 <summary><b>Install in Claude Code (CLI)</b></summary>
-
-Run this command in your terminal:
 
 ```sh
 claude mcp add --transport http transcript-api https://transcriptapi.com/mcp
@@ -127,21 +135,20 @@ claude mcp add --transport http transcript-api https://transcriptapi.com/mcp
 </details>
 
 <details>
-<summary><b>Install in ChatGPT (OAuth)</b></summary>
+<summary><b>Install in ChatGPT</b></summary>
 
-ChatGPT supports OAuth for secure authentication. You will need to enable **Developer Mode** in ChatGPT settings first.
+ChatGPT supports OAuth for secure authentication. Enable **Developer Mode** in ChatGPT settings first.
 
-**Quick Setup (Credentials Optional):**
+**Quick Setup:**
 
-1. In ChatGPT, go to `Settings` -> `Connected Apps` -> `Add`
+1. In ChatGPT, go to `Settings` → `Connected Apps` → `Add`
 2. Enter the MCP Server URL: `https://transcriptapi.com/mcp`
 3. **Client ID & Secret are optional:**
-   - **Leave them blank** to use Dynamic Client Registration (Recommended/Simpler). ChatGPT will automatically register itself.
-   - **(Advanced)** Or enter Client ID & Secret from your [dashboard](https://transcriptapi.com/dashboard/mcp-integration) if you prefer Static Registration.
+   - **Leave them blank** to use Dynamic Client Registration (recommended/simpler).
+   - **(Advanced)** Or enter Client ID & Secret from your [dashboard](https://transcriptapi.com/dashboard/mcp-integration) for static registration.
 4. Click **Add** and authorize via the browser popup.
 
-**Full Guide:**
-For a step-by-step tutorial on enabling Developer Mode, adding the connector, and authorizing, please read our [official ChatGPT Integration Guide](https://transcriptapi.com/docs/mcp/chatgpt).
+**Full Guide:** [ChatGPT Integration Guide →](https://transcriptapi.com/docs/mcp/chatgpt)
 
 </details>
 
@@ -150,7 +157,7 @@ For a step-by-step tutorial on enabling Developer Mode, adding the connector, an
 
 [<img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_TranscriptAPI_MCP-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white">](https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22transcript-api%22%2C%22url%22%3A%22https%3A%2F%2Ftranscriptapi.com%2Fmcp%22%7D)
 
-Add this to your VS Code user settings (`settings.json`):
+Or add this to VS Code user settings (`settings.json`):
 
 ```json
 "mcp.servers": {
@@ -167,9 +174,24 @@ Add this to your VS Code user settings (`settings.json`):
 </details>
 
 <details>
+<summary><b>Install in OpenAI Agent Builder</b></summary>
+
+OpenAI Agent Builder currently requires API Key authentication (OAuth not yet supported).
+
+1. Create a new Agent
+2. Under "Actions" or "Tools", add a new **MCP Server**
+3. URL: `https://transcriptapi.com/mcp`
+4. Auth Type: **API Key**
+5. Paste your API Key from the [dashboard](https://transcriptapi.com/dashboard/api-keys)
+
+[Step-by-Step Guide →](https://transcriptapi.com/docs/mcp/openai-agent-builder)
+
+</details>
+
+<details>
 <summary><b>Install in Windsurf</b></summary>
 
-Add this to your Windsurf MCP config (`~/.codeium/windsurf/mcp_config.json`):
+Add to `~/.codeium/windsurf/mcp_config.json`:
 
 ```json
 {
@@ -187,24 +209,7 @@ Add this to your Windsurf MCP config (`~/.codeium/windsurf/mcp_config.json`):
 </details>
 
 <details>
-<summary><b>Install in OpenAI Agent Builder</b></summary>
-
-OpenAI Agent Builder currently requires API Key authentication (OAuth not supported yet).
-
-1. Create a new Agent
-2. Under "Actions" or "Tools", add a new **MCP Server**
-3. URL: `https://transcriptapi.com/mcp`
-4. Auth Type: **API Key**
-5. Paste your API Key from the [dashboard](https://transcriptapi.com/dashboard/api-keys)
-
-[View Step-by-Step Guide →](https://transcriptapi.com/docs/mcp/openai-agent-builder)
-
-</details>
-
-<details>
 <summary><b>Install in Cline</b></summary>
-
-Add to your Cline MCP settings:
 
 ```json
 {
@@ -225,7 +230,7 @@ Add to your Cline MCP settings:
 <details>
 <summary><b>Install in Zed</b></summary>
 
-Add to your Zed `settings.json`:
+In Zed `settings.json`:
 
 ```json
 {
@@ -246,8 +251,6 @@ Add to your Zed `settings.json`:
 <details>
 <summary><b>Install in Roo Code</b></summary>
 
-Add to your Roo Code config:
-
 ```json
 {
   "mcpServers": {
@@ -266,8 +269,6 @@ Add to your Roo Code config:
 
 <details>
 <summary><b>Install in Amp</b></summary>
-
-Run via CLI:
 
 ```sh
 amp mcp add transcript-api https://transcriptapi.com/mcp --header "Authorization: Bearer YOUR_API_KEY"
@@ -320,7 +321,7 @@ In `.kilocode/mcp.json`:
 <details>
 <summary><b>Install in JetBrains AI Assistant</b></summary>
 
-In Settings -> Tools -> AI Assistant -> MCP:
+In Settings → Tools → AI Assistant → MCP:
 
 ```json
 {
@@ -436,7 +437,7 @@ In `mcp.json`:
 <details>
 <summary><b>Install in BoltAI</b></summary>
 
-In Plugins -> JSON Config:
+In Plugins → JSON Config:
 
 ```json
 {
@@ -456,7 +457,7 @@ In Plugins -> JSON Config:
 <details>
 <summary><b>Install in Warp</b></summary>
 
-In Settings -> AI -> MCP:
+In Settings → AI → MCP:
 
 ```json
 {
@@ -474,7 +475,7 @@ In Settings -> AI -> MCP:
 <details>
 <summary><b>Install in Perplexity Desktop</b></summary>
 
-In Settings -> Connectors -> Advanced:
+In Settings → Connectors → Advanced:
 
 ```json
 {
@@ -487,15 +488,17 @@ In Settings -> Connectors -> Advanced:
 
 </details>
 
+---
+
 ## 🔐 Authentication
 
-### API Key Authentication
+### API Key
 
 Simple and universal. Works with every MCP client.
 
-1. Get your API key from [dashboard](https://transcriptapi.com/dashboard/api-keys)
+1. Get your API key from your [dashboard](https://transcriptapi.com/dashboard/api-keys)
 2. Keys start with `sk_` prefix
-3. Add to config as Bearer token:
+3. Add to config as a Bearer token:
 
 ```json
 "headers": {
@@ -503,45 +506,52 @@ Simple and universal. Works with every MCP client.
 }
 ```
 
-> **Security Note:** Store keys in environment variables where possible and never commit them to version control.
+> **Security:** Store keys in environment variables where possible and never commit them to version control.
 
-### OAuth Authentication
+### OAuth 2.1
 
 Automatic, secure authentication without manual key management.
 
 **Dynamic Client Registration (DCR):**
 
-- Supported by: Claude Desktop, ChatGPT
-- Just add the MCP URL - client auto-registers
+- Supported by: Claude Desktop, Claude Web, ChatGPT
+- Just add the MCP URL — client auto-registers
 - No credentials needed
 - You'll authorize once via browser redirect
 
 **Static Client Registration:**
 
-- Supported by: ChatGPT (optional/required for some setups)
-- Get Client ID + Secret from [MCP Integration Dashboard](https://transcriptapi.com/dashboard/mcp-integration)
+- Supported by: ChatGPT (optional)
+- Get Client ID + Secret from the [MCP Integration Dashboard](https://transcriptapi.com/dashboard/mcp-integration)
 - More control over client identity
+
+Full reference: [Authentication docs →](https://transcriptapi.com/docs/mcp/claude)
+
+---
 
 ## 🧰 Available Tools
 
-### `get_youtube_transcript`
+All six tools are exposed automatically once you connect. **1 credit = 1 successful (HTTP 200) request.** Failed/rate-limited calls do not consume credits.
 
-Fetches the transcript for a given YouTube video.
+### 1. `get_youtube_transcript`
+
+Fetch the transcript for any YouTube video — as markdown (with metadata) or structured JSON. Drop the output straight into summarizers, search indexes, or AI pipelines.
 
 | Parameter           | Type    | Default      | Description                                    |
 | ------------------- | ------- | ------------ | ---------------------------------------------- |
-| `video_url`         | string  | **required** | YouTube URL (full, short) or 11-char video ID  |
+| `video_url`         | string  | **required** | YouTube URL (full or short) or 11-char video ID |
 | `send_metadata`     | boolean | `true`       | Include video title, author, thumbnail         |
-| `format`            | string  | `"text"`     | Output format: `"text"` (markdown) or `"json"` |
+| `format`            | string  | `"text"`     | `"text"` (markdown) or `"json"`                |
 | `include_timestamp` | boolean | `true`       | Add timestamps to each segment                 |
 
-**Example Output (Text):**
+**Cost:** 1 credit per successful request.
+
+**Example output (markdown):**
 
 ```markdown
 # Metadata
 
 ## Title: Rick Astley - Never Gonna Give You Up
-
 ## Author: RickAstleyVEVO
 
 # Transcript
@@ -550,7 +560,7 @@ Fetches the transcript for a given YouTube video.
 [4.12s] Never gonna let you down
 ```
 
-**Example Output (JSON):**
+**Example output (JSON):**
 
 ```json
 {
@@ -562,32 +572,128 @@ Fetches the transcript for a given YouTube video.
 }
 ```
 
+---
+
+### 2. `search_youtube`
+
+Search YouTube for videos or channels. Filter by type and paginate with a continuation token — perfect for discovery, research, and building content pipelines.
+
+| Parameter      | Type   | Default      | Description                          |
+| -------------- | ------ | ------------ | ------------------------------------ |
+| `query`        | string | **required** | Search query                         |
+| `search_type`  | string | `"video"`    | `"video"` or `"channel"`             |
+| `continuation` | string | `null`       | Token from a prior call for next page |
+
+**Cost:** 1 credit per page (~20 results per page).
+
+**Example prompt:**
+
+```txt
+Search YouTube for "transformer architecture explained" and pick the
+top 3 results by relevance.
+```
+
+---
+
+### 3. `get_channel_latest_videos` <sub>· **FREE**</sub>
+
+Get the ~15 most recent uploads from any channel via RSS — no credits required. Perfect for monitoring, daily recaps, or triggering downstream pipelines.
+
+| Parameter | Type   | Default      | Description                                  |
+| --------- | ------ | ------------ | -------------------------------------------- |
+| `channel` | string | **required** | `@handle`, channel URL, or `UC…` channel ID |
+
+**Cost:** Free.
+
+**Example prompt:**
+
+```txt
+Every morning, list new uploads from @lexfridman and @hubermanlab.
+```
+
+---
+
+### 4. `search_channel_videos`
+
+Search inside one specific channel for videos matching a query. Great for researching a creator's content or finding niche topics in large channels.
+
+| Parameter      | Type   | Default      | Description                          |
+| -------------- | ------ | ------------ | ------------------------------------ |
+| `channel`      | string | **required** | `@handle`, channel URL, or `UC…` ID |
+| `query`        | string | **required** | Query to search within the channel   |
+| `continuation` | string | `null`       | Pagination token                     |
+
+**Cost:** 1 credit per page (~30 results per page).
+
+**Example prompt:**
+
+```txt
+On Andrew Huberman's channel, find every video about sleep.
+```
+
+---
+
+### 5. `list_channel_videos`
+
+List every video on a channel, ~100 per page. Ideal for building databases, bulk transcript extraction, or auditing a channel's full content library.
+
+| Parameter      | Type   | Default      | Description                          |
+| -------------- | ------ | ------------ | ------------------------------------ |
+| `channel`      | string | **required** | `@handle`, channel URL, or `UC…` ID |
+| `continuation` | string | `null`       | Pagination token                     |
+
+**Cost:** 1 credit per page (~100 results per page).
+
+---
+
+### 6. `list_playlist_videos`
+
+Get every video in a YouTube playlist (PL/UU/LL/FL/OL IDs supported). Process entire courses, lecture series, or curated collections in a single call.
+
+| Parameter      | Type   | Default      | Description                  |
+| -------------- | ------ | ------------ | ---------------------------- |
+| `playlist`     | string | **required** | Playlist URL or playlist ID  |
+| `continuation` | string | `null`       | Pagination token             |
+
+**Cost:** 1 credit per page (~100 results per page).
+
+---
+
 ## 💡 Use Cases & Prompts
 
-| Use Case                   | Example Prompt                                                |
-| -------------------------- | ------------------------------------------------------------- |
-| 📝 **Summarization**       | "Summarize the key points from this video: [URL]"             |
-| 🔍 **Research**            | "What are the main arguments presented in [URL]?"             |
-| 📚 **Study Notes**         | "Create study notes from this lecture: [URL]"                 |
-| ⚖️ **Comparison**          | "Compare the perspectives in these two videos: [URL1] [URL2]" |
-| 🌐 **Translation**         | "Translate this video's content to Spanish: [URL]"            |
-| ✍️ **Content Repurposing** | "Turn this video into a blog post: [URL]"                     |
+| Use Case                       | Example Prompt                                                                                  |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- |
+| 📝 **Summarize a video**       | "Summarize the key points from this video: [URL]"                                               |
+| 🔍 **Research a topic**        | "Search YouTube for the 5 most-watched videos on neural radiance fields; summarize each."        |
+| 🧠 **Study notes**             | "Create study notes from this MIT lecture series playlist: [PLAYLIST URL]"                       |
+| ⚖️ **Compare perspectives**    | "Compare arguments in these two videos: [URL1] [URL2]"                                          |
+| 🌐 **Translate**               | "Translate this video's transcript to Spanish: [URL]"                                           |
+| ✍️ **Repurpose content**        | "Turn this video into a 1,500-word blog post: [URL]"                                            |
+| 📡 **Monitor a creator**       | "Each morning, list new uploads from @hubermanlab and tell me which to watch."                  |
+| 🏛️ **Build a content database** | "Pull every video from @veritasium and store title + transcript."                              |
+| 🎯 **Competitor analysis**      | "Search inside @MKBHD for any video about [competitor product] and summarize the takeaways."   |
+
+---
 
 ## 💳 Pricing & Rate Limits
 
-| Plan        | Price    | Credits | Rate Limit  |
-| ----------- | -------- | ------- | ----------- |
-| **Free**    | $0/month | 100     | 60 req/min  |
-| **Starter** | $5/month | 1,000   | 200 req/min |
+| Plan                | Price             | Credits      | Rate Limit  |
+| ------------------- | ----------------- | ------------ | ----------- |
+| **Free**            | $0 (one-time)     | 100          | 60 req/min  |
+| **Starter Monthly** | $5/month          | 1,000/month  | 200 req/min |
+| **Starter Annual**  | $54/year ($4.50/mo) | 1,000/month  | 300 req/min |
 
-- **1 Credit** = 1 Successful Request (HTTP 200)
-- Failed requests or rate-limited requests do not consume credits.
-- [View Pricing](https://transcriptapi.com/#pricing) | [Manage Credits](https://transcriptapi.com/billing)
+- **1 Credit** = 1 successful request (HTTP 200)
+- Failed and rate-limited requests do **not** consume credits.
+- `get_channel_latest_videos` is **free** (no credits charged).
+- [View pricing](https://transcriptapi.com/#pricing) · [Manage credits](https://transcriptapi.com/billing)
+
+---
 
 ## 🚨 Troubleshooting
 
 <details>
-<summary><b>Authentication Errors (401)</b></summary>
+<summary><b>Authentication errors (401)</b></summary>
 
 - Verify your API key starts with `sk_`
 - Check for extra spaces when copying
@@ -596,14 +702,14 @@ Fetches the transcript for a given YouTube video.
 </details>
 
 <details>
-<summary><b>No Credits (402)</b></summary>
+<summary><b>No credits (402)</b></summary>
 
-- Check your credit balance at [dashboard](https://transcriptapi.com/dashboard)
+- Check your credit balance at the [dashboard](https://transcriptapi.com/dashboard)
 - Purchase more credits or upgrade your plan
 </details>
 
 <details>
-<summary><b>Video Not Available (404)</b></summary>
+<summary><b>Video not available (404)</b></summary>
 
 - The video might not have captions/subtitles enabled
 - The video might be private or age-restricted
@@ -611,7 +717,7 @@ Fetches the transcript for a given YouTube video.
 </details>
 
 <details>
-<summary><b>Rate Limiting (429)</b></summary>
+<summary><b>Rate limiting (429)</b></summary>
 
 - Respect the `Retry-After` header
 - Implement exponential backoff in your client
@@ -619,20 +725,49 @@ Fetches the transcript for a given YouTube video.
 </details>
 
 <details>
-<summary><b>OAuth Issues</b></summary>
+<summary><b>OAuth issues</b></summary>
 
 - Clear browser cookies and try again
 - For ChatGPT, try switching between Dynamic and Static registration
 - Ensure popup blockers aren't preventing the auth window
 </details>
 
-## 🤝 Connect with Us
+---
+
+## 🔗 Also available as a REST API
+
+Building an app instead of an agent? The same backend ships as a JSON REST API.
+
+|                 | MCP                         | REST API                                                  |
+| --------------- | --------------------------- | --------------------------------------------------------- |
+| **Best for**    | AI assistants & agents      | Apps & backend services                                   |
+| **Setup**       | Add a URL                   | Code integration                                          |
+| **Get started** | This README                 | [API docs →](https://transcriptapi.com/docs/api) · [Swagger →](https://transcriptapi.com/swagger) |
+
+Base URL: `https://transcriptapi.com/api/v2`
+
+---
+
+## 🤝 Connect
 
 - 🌐 **Website:** [transcriptapi.com](https://transcriptapi.com)
-- 📚 **Documentation:** [transcriptapi.com/docs](https://transcriptapi.com/docs)
+- 📚 **Docs:** [transcriptapi.com/docs](https://transcriptapi.com/docs)
 - 🔧 **API Reference:** [transcriptapi.com/docs/api](https://transcriptapi.com/docs/api)
+- 🤖 **MCP Setup Guides:** [Claude](https://transcriptapi.com/docs/mcp/claude) · [ChatGPT](https://transcriptapi.com/docs/mcp/chatgpt) · [OpenAI Agent Builder](https://transcriptapi.com/docs/mcp/openai-agent-builder)
 - 💬 **Contact:** [transcriptapi.com/contact](https://transcriptapi.com/contact)
 
 ---
 
-© 2025 Zero Point Studio d.o.o.
+## 📋 MCP Registry
+
+This server is published to the official [Model Context Protocol Registry](https://registry.modelcontextprotocol.io/) under the name:
+
+```
+com.transcriptapi/youtube-transcript-and-youtube-search
+```
+
+---
+
+<p align="center">
+  <sub>© 2026 Zero Point Studio d.o.o. · Released under the <a href="./LICENSE">MIT License</a></sub>
+</p>

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "com.transcriptapi/youtube-transcript-and-youtube-search",
+  "title": "💯 YouTube Transcript + YouTube Search MCP for AI Agents",
+  "description": "💯 The fastest YouTube transcript + YouTube search MCP for AI agents. Try for free.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/ZeroPointRepo/TranscriptAPI-MCP",
+    "source": "github"
+  },
+  "websiteUrl": "https://transcriptapi.com",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/ZeroPointRepo/TranscriptAPI-MCP/main/public/brand/logo-512.png",
+      "mimeType": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/ZeroPointRepo/TranscriptAPI-MCP/main/public/brand/logo-256.png",
+      "mimeType": "image/png",
+      "sizes": "256x256"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://transcriptapi.com/mcp"
+    }
+  ]
+}
