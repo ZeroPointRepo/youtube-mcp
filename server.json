@@ -13,12 +13,12 @@
     {
       "src": "https://raw.githubusercontent.com/ZeroPointRepo/youtube-mcp/main/public/brand/logo-512.png",
       "mimeType": "image/png",
-      "sizes": "512x512"
+      "sizes": ["512x512"]
     },
     {
       "src": "https://raw.githubusercontent.com/ZeroPointRepo/youtube-mcp/main/public/brand/logo-256.png",
       "mimeType": "image/png",
-      "sizes": "256x256"
+      "sizes": ["256x256"]
     }
   ],
   "remotes": [
