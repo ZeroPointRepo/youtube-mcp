@@ -14,15 +14,15 @@
 </p>
 
 <p align="center">
-  <a href="https://cursor.com/en/install-mcp?name=transcript-api&config=eyJ1cmwiOiJodHRwczovL3RyYW5zY3JpcHRhcGkuY29tL21jcCJ9"><img alt="Install in Cursor" src="https://cursor.com/deeplink/mcp-install-dark.svg"/></a>
-  <a href="https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22transcript-api%22%2C%22url%22%3A%22https%3A%2F%2Ftranscriptapi.com%2Fmcp%22%7D"><img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_TranscriptAPI_MCP-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white"/></a>
+  <a href="https://cursor.com/en/install-mcp?name=transcript-api&config=eyJ1cmwiOiJodHRwczovL3RyYW5zY3JpcHRhcGkuY29tL21jcCJ9"><img alt="Install in Cursor" src="https://img.shields.io/badge/Cursor-Install_MCP-000000?style=for-the-badge&logo=cursor&logoColor=white"/></a>
+  <a href="https://insiders.vscode.dev/redirect?url=vscode%3Amcp%2Finstall%3F%7B%22name%22%3A%22transcript-api%22%2C%22url%22%3A%22https%3A%2F%2Ftranscriptapi.com%2Fmcp%22%7D"><img alt="Install in VS Code" src="https://img.shields.io/badge/VS_Code-Install_MCP-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white"/></a>
 </p>
 
 <p align="center">
-  <a href="https://transcriptapi.com"><img src="https://img.shields.io/badge/Website-transcriptapi.com-FF3B00?style=flat" alt="Website"/></a>
-  <a href="https://transcriptapi.com/docs"><img src="https://img.shields.io/badge/Docs-API_Reference-06B6D4?style=flat" alt="Docs"/></a>
-  <a href="https://transcriptapi.com/swagger"><img src="https://img.shields.io/badge/Swagger-Try_API-85EA2D?style=flat&logo=swagger" alt="Swagger"/></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat" alt="MIT License"/></a>
+  <a href="https://transcriptapi.com"><img src="https://img.shields.io/badge/Website-transcriptapi.com-FF3B00?style=for-the-badge" alt="Website"/></a>
+  <a href="https://transcriptapi.com/docs"><img src="https://img.shields.io/badge/Docs-API_Reference-06B6D4?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Docs"/></a>
+  <a href="https://transcriptapi.com/swagger"><img src="https://img.shields.io/badge/Swagger-Try_API-85EA2D?style=for-the-badge&logo=swagger&logoColor=white" alt="Swagger"/></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-4CAF50?style=for-the-badge" alt="MIT License"/></a>
 </p>
 
 > **Powering 15M+ transcripts every month** · 500K+ transcripts processed daily · 49ms median response time
