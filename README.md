@@ -57,6 +57,63 @@ That single prompt uses 3 of our 6 tools — `search_youtube`, `search_channel_v
 
 ---
 
+## 🧩 Install as an Agent Plugin <sub>· **easiest**</sub>
+
+This repository root is a conformant **[Agent Plugins 1.0.0](https://agent-plugins.org/specification)** package — the portable format published 2026-08-06 and supported by ChatGPT, Codex, Cursor, GitHub Copilot, Kiro and VS Code. One install gets you the MCP server **and** a bundled `youtube` skill that teaches your agent when to use each tool and how not to waste credits.
+
+```text
+plugin.json                # manifest
+mcp.json                   # hosted MCP server, streamable-http, OAuth (no keys)
+skills/youtube/SKILL.md    # when + how to use the 6 tools
+```
+
+**VS Code** — Command Palette → **Chat: Install Plugin From Source**, then paste:
+
+```txt
+https://github.com/ZeroPointRepo/youtube-mcp
+```
+
+Or register a local clone in `settings.json`:
+
+```json
+"chat.pluginLocations": { "/absolute/path/to/youtube-mcp": true }
+```
+
+**Cursor** — **Customize** in the sidebar → find the plugin → **Install**. For a local clone:
+
+```bash
+git clone https://github.com/ZeroPointRepo/youtube-mcp ~/.cursor/plugins/local/transcriptapi
+```
+
+Then **Developer: Reload Window**.
+
+**ChatGPT, Codex, GitHub Copilot, Kiro, any other client** — point your client's plugin mechanism at this repository, or at a local clone. Agent Plugins 1.0.0 standardizes the *package format*, not installation, so each client owns its own install flow.
+
+### 30-second example
+
+```txt
+Summarize this video for me: https://youtu.be/dQw4w9WgXcQ
+```
+
+The agent calls `get_youtube_transcript`, gets the full timestamped transcript and summarizes it. **No API key to configure** — the first call opens an OAuth sign-in (free account, 100 credits, no card). Then try:
+
+```txt
+What has @TED posted in the last month?     → get_channel_latest_videos (free)
+Find talks on protein folding, summarize the best three.
+                                             → search_youtube, then transcripts
+```
+
+There are **no credentials in this package** — Agent Plugins 1.0.0 forbids embedded secrets, and authorization is client-managed. Verify the package yourself:
+
+```bash
+curl -sO https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
+curl -sO https://agent-plugins.org/schemas/1.0.0/mcp.schema.json
+npx ajv-cli@5 validate --spec=draft2020 -s plugin.schema.json -d plugin.json
+npx ajv-cli@5 validate --spec=draft2020 -s mcp.schema.json    -d mcp.json
+```
+
+---
+
 ## 🛠️ Quick Install
 
 > **Requirements:**
