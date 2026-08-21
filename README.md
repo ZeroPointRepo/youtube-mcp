@@ -812,6 +812,7 @@ Base URL: `https://transcriptapi.com/api/v2`
 - 🔧 **API Reference:** [transcriptapi.com/docs/api](https://transcriptapi.com/docs/api)
 - 🤖 **MCP Setup Guides:** [Claude](https://transcriptapi.com/docs/mcp/claude) · [ChatGPT](https://transcriptapi.com/docs/mcp/chatgpt) · [OpenAI Agent Builder](https://transcriptapi.com/docs/mcp/openai-agent-builder)
 - 💬 **Contact:** [transcriptapi.com/contact](https://transcriptapi.com/contact)
+- 📂 **Listed in:** [awesome-agent-plugins](https://github.com/ZeroPointRepo/awesome-agent-plugins), our directory of verified Agent Plugins on the open standard
 
 ---
 
