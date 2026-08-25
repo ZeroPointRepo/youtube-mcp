@@ -62,9 +62,10 @@ That single prompt uses 3 of our 6 tools — `search_youtube`, `search_channel_v
 This repository root is a conformant **[Agent Plugins 1.0.0](https://agent-plugins.org/specification)** package — the portable format published 2026-08-06 and supported by ChatGPT, Codex, Cursor, GitHub Copilot, Kiro and VS Code. One install gets you the MCP server **and** a bundled `youtube` skill that teaches your agent when to use each tool and how not to waste credits.
 
 ```text
-plugin.json                # manifest
-mcp.json                   # hosted MCP server, streamable-http, OAuth (no keys)
-skills/youtube/SKILL.md    # when + how to use the 6 tools
+plugin.json                    # Agent Plugins 1.0.0 manifest
+mcp.json                       # hosted MCP server, streamable-http, OAuth (no keys)
+skills/youtube/SKILL.md        # when + how to use the 6 tools
+.cursor-plugin/plugin.json     # Cursor plugin manifest, same MCP + skill (+ marketplace.json)
 ```
 
 **VS Code** — Command Palette → **Chat: Install Plugin From Source**, then paste:
@@ -86,6 +87,12 @@ git clone https://github.com/ZeroPointRepo/youtube-mcp ~/.cursor/plugins/local/t
 ```
 
 Then **Developer: Reload Window**.
+
+**Add to Cursor** — MCP server only, no clone. Paste this deeplink into your browser:
+
+```txt
+cursor://anysphere.cursor-deeplink/mcp/install?name=transcriptapi&config=eyJ1cmwiOiJodHRwczovL3RyYW5zY3JpcHRhcGkuY29tL21jcCJ9
+```
 
 **ChatGPT, Codex, GitHub Copilot, Kiro, any other client** — point your client's plugin mechanism at this repository, or at a local clone. Agent Plugins 1.0.0 standardizes the *package format*, not installation, so each client owns its own install flow.
 
