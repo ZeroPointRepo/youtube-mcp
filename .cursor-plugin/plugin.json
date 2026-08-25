@@ -1,0 +1,35 @@
+{
+  "name": "transcriptapi",
+  "displayName": "TranscriptAPI (YouTube)",
+  "version": "1.0.0",
+  "description": "YouTube transcripts, video and channel search, channel browsing and playlist extraction for AI agents, via the hosted TranscriptAPI MCP server. OAuth sign-in, free tier, no API key to manage.",
+  "author": {
+    "name": "Zero Point Studio",
+    "email": "hello@transcriptapi.com"
+  },
+  "homepage": "https://transcriptapi.com",
+  "repository": "https://github.com/ZeroPointRepo/youtube-mcp",
+  "license": "MIT",
+  "logo": "public/brand/logo-512.png",
+  "keywords": [
+    "youtube",
+    "transcript",
+    "captions",
+    "subtitles",
+    "video-search",
+    "channel-search",
+    "playlists",
+    "summarization",
+    "research",
+    "transcriptapi",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "youtube",
+    "transcripts",
+    "video-search",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json"
+}
