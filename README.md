@@ -9,7 +9,7 @@
 <h1 align="center">YouTube Transcript + YouTube Search MCP for AI Agents</h1>
 
 <p align="center">
-  <b>Hosted YouTube MCP for AI agents: transcripts, search, channels, playlists, and video metadata.</b><br/>
+  <b>The fastest YouTube transcript + YouTube search MCP for AI agents. Try for free.</b><br/>
   12 tools: transcripts, video &amp; channel metadata, video search, channel browsing, in-channel search, playlist extraction, and new-upload polling, for Claude, ChatGPT, Cursor, VS Code, Claude Code, and 20+ clients.
 </p>
 
