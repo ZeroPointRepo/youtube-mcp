@@ -827,7 +827,7 @@ Get every video in a YouTube playlist (PL/UU/LL/FL/OL IDs supported). Process en
 | ⚖️ **Compare perspectives**    | "Compare arguments in these two videos: [URL1] [URL2]"                                          |
 | 🌐 **Translate**               | "Translate this video's transcript to Spanish: [URL]"                                           |
 | ✍️ **Repurpose content**        | "Turn this video into a 1,500-word blog post: [URL]"                                            |
-| 📡 **Monitor a creator**       | "Each morning, list new uploads from @TED and tell me which to watch."                  |
+| 📡 **Monitor a channel**       | "Each morning, list new uploads from @TED and tell me which to watch."                  |
 | 🏛️ **Build a content database** | "Pull every video from @NASA and store title + transcript."                              |
 | 🎯 **Competitor analysis**      | "Search inside @NASA for any video about [a specific mission or topic] and summarize the takeaways."   |
 

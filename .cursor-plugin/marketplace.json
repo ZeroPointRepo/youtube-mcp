@@ -5,7 +5,7 @@
     "email": "hello@transcriptapi.com"
   },
   "metadata": {
-    "description": "YouTube transcript and search plugins by TranscriptAPI: 15M+ transcripts a month.",
+    "description": "YouTube transcript and search plugins by TranscriptAPI.",
     "version": "1.0.0"
   },
   "plugins": [
