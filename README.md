@@ -9,8 +9,8 @@
 <h1 align="center">YouTube Transcript + YouTube Search MCP for AI Agents</h1>
 
 <p align="center">
-  <b>The fastest YouTube transcript + YouTube search MCP for AI agents. Try for free.</b><br/>
-  12 tools — transcripts, video &amp; channel metadata, video search, channel browsing, in-channel search, playlist extraction, and new-upload polling — for Claude, ChatGPT, Cursor, VS Code, Claude Code, and 20+ clients.
+  <b>Hosted YouTube MCP for AI agents: transcripts, search, channels, playlists, and video metadata.</b><br/>
+  12 tools: transcripts, video &amp; channel metadata, video search, channel browsing, in-channel search, playlist extraction, and new-upload polling, for Claude, ChatGPT, Cursor, VS Code, Claude Code, and 20+ clients.
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 
 ## Why TranscriptAPI MCP
 
-Most YouTube MCP servers do one thing — pull a single transcript. **TranscriptAPI MCP is a full toolkit**: transcripts, video search, channel search, channel browsing, playlist extraction, and free RSS-based upload tracking — all from one remote endpoint, all designed for AI agents.
+Most YouTube MCP servers do one thing: pull a single transcript. **TranscriptAPI MCP is a full toolkit**: transcripts, video search, channel search, channel browsing, playlist extraction, and free RSS-based upload tracking, all from one remote endpoint, all designed for AI agents.
 
 |                                          | TranscriptAPI MCP | Typical YouTube MCP |
 | ---------------------------------------- | ----------------- | ------------------- |
@@ -49,17 +49,17 @@ Most YouTube MCP servers do one thing — pull a single transcript. **Transcript
 **Quick taste:**
 
 ```txt
-Find Andrew Huberman's three most-viewed videos about sleep,
+Find @NASA's three most-viewed videos about the Moon landing,
 get the transcript of each, and write a 5-bullet comparison.
 ```
 
-That single prompt uses 3 of our 12 tools — `search_youtube`, `search_channel_videos`, `get_youtube_transcript` — without you writing a line of code.
+That single prompt uses 3 of our 12 tools (`search_youtube`, `search_channel_videos`, `get_youtube_transcript`) without you writing a line of code.
 
 ---
 
 ## 🧩 Install as an Agent Plugin <sub>· **easiest**</sub>
 
-This repository root is a conformant **[Agent Plugins 1.0.0](https://agent-plugins.org/specification)** package — the portable format published 2026-08-06 and supported by ChatGPT, Codex, Cursor, GitHub Copilot, Kiro and VS Code. One install gets you the MCP server **and** a bundled `youtube` skill that teaches your agent when to use each tool and how not to waste credits.
+This repository root is a conformant **[Agent Plugins 1.0.0](https://agent-plugins.org/specification)** package: the portable format published 2026-08-06 and supported by ChatGPT, Codex, Cursor, GitHub Copilot, Kiro and VS Code. One install gets you the MCP server **and** a bundled `youtube` skill that teaches your agent when to use each tool and how not to waste credits.
 
 ```text
 plugin.json                    # Agent Plugins 1.0.0 manifest
@@ -68,7 +68,7 @@ skills/youtube/SKILL.md        # when + how to use the 12 tools
 .cursor-plugin/plugin.json     # Cursor plugin manifest, same MCP + skill (+ marketplace.json)
 ```
 
-**VS Code** — Command Palette → **Chat: Install Plugin From Source**, then paste:
+**VS Code**: Command Palette → **Chat: Install Plugin From Source**, then paste:
 
 ```txt
 https://github.com/ZeroPointRepo/youtube-mcp
@@ -80,7 +80,7 @@ Or register a local clone in `settings.json`:
 "chat.pluginLocations": { "/absolute/path/to/youtube-mcp": true }
 ```
 
-**Cursor** — **Customize** in the sidebar → find the plugin → **Install**. For a local clone:
+**Cursor**: **Customize** in the sidebar → find the plugin → **Install**. For a local clone:
 
 ```bash
 git clone https://github.com/ZeroPointRepo/youtube-mcp ~/.cursor/plugins/local/transcriptapi
@@ -88,21 +88,21 @@ git clone https://github.com/ZeroPointRepo/youtube-mcp ~/.cursor/plugins/local/t
 
 Then **Developer: Reload Window**.
 
-**Add to Cursor** — MCP server only, no clone. Paste this deeplink into your browser:
+**Add to Cursor**: MCP server only, no clone. Paste this deeplink into your browser:
 
 ```txt
 cursor://anysphere.cursor-deeplink/mcp/install?name=transcriptapi&config=eyJ1cmwiOiJodHRwczovL3RyYW5zY3JpcHRhcGkuY29tL21jcCJ9
 ```
 
-**ChatGPT, Codex, GitHub Copilot, Kiro, any other client** — point your client's plugin mechanism at this repository, or at a local clone. Agent Plugins 1.0.0 standardizes the *package format*, not installation, so each client owns its own install flow.
+**ChatGPT, Codex, GitHub Copilot, Kiro, any other client**: point your client's plugin mechanism at this repository, or at a local clone. Agent Plugins 1.0.0 standardizes the *package format*, not installation, so each client owns its own install flow.
 
 ### 30-second example
 
 ```txt
-Summarize this video for me: https://youtu.be/dQw4w9WgXcQ
+Summarize this video for me: https://youtu.be/UF8uR6Z6KLc
 ```
 
-The agent calls `get_youtube_transcript`, gets the full timestamped transcript and summarizes it. **No API key to configure** — the first call opens an OAuth sign-in (free account, 100 credits, no card). Then try:
+The agent calls `get_youtube_transcript`, gets the full timestamped transcript and summarizes it. **No API key to configure**: the first call opens an OAuth sign-in (free account, 100 credits, no card). Then try:
 
 ```txt
 What has @TED posted in the last month?     → get_channel_latest_videos (free)
@@ -110,7 +110,7 @@ Find talks on protein folding, summarize the best three.
                                              → search_youtube, then transcripts
 ```
 
-There are **no credentials in this package** — Agent Plugins 1.0.0 forbids embedded secrets, and authorization is client-managed. Verify the package yourself:
+There are **no credentials in this package**: Agent Plugins 1.0.0 forbids embedded secrets, and authorization is client-managed. Verify the package yourself:
 
 ```bash
 curl -sO https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
@@ -125,7 +125,7 @@ npx ajv-cli@5 validate --spec=draft2020 -s mcp.schema.json    -d mcp.json
 
 > **Requirements:**
 >
-> - A TranscriptAPI account ([sign up free](https://transcriptapi.com) — first 100 credits free)
+> - A TranscriptAPI account ([sign up free](https://transcriptapi.com), first 100 credits free)
 > - An API key from your [dashboard](https://transcriptapi.com/dashboard/api-keys) **OR** use OAuth (Claude, ChatGPT)
 
 > **Recommended: Add a Rule to Auto-Invoke TranscriptAPI**
@@ -171,7 +171,7 @@ Or edit `~/.cursor/mcp.json`:
 </details>
 
 <details>
-<summary><b>Install in Claude (Desktop & Web) — Recommended</b></summary>
+<summary><b>Install in Claude (Desktop & Web) - Recommended</b></summary>
 
 Claude supports adding MCP servers directly via the "Custom Connector" UI.
 
@@ -579,7 +579,7 @@ Automatic, secure authentication without manual key management.
 **Dynamic Client Registration (DCR):**
 
 - Supported by: Claude Desktop, Claude Web, ChatGPT
-- Just add the MCP URL — client auto-registers
+- Just add the MCP URL: client auto-registers
 - No credentials needed
 - You'll authorize once via browser redirect
 
@@ -595,13 +595,13 @@ Full reference: [Authentication docs →](https://transcriptapi.com/docs/mcp/cla
 
 ## 🧰 Available Tools
 
-All 12 tools are exposed automatically once you connect. **1 credit = 1 successful (HTTP 200) request.** Failed/rate-limited calls do not consume credits.
+All 12 tools are exposed automatically once you connect. **Successful calls cost 1 credit unless a tool states otherwise below.** Failed/rate-limited calls do not consume credits.
 
 > **Which video tool?** Use `get_youtube_video_info` (free) to discover transcript languages before fetching a transcript. Use `get_video_metadata` (1 credit) for view/like counts, publish date, description, duration, tags, or related videos.
 
 ### 1. `get_youtube_transcript`
 
-Fetch the transcript for any YouTube video — as markdown (with metadata) or structured JSON. Drop the output straight into summarizers, search indexes, or AI pipelines.
+Fetch the transcript for any YouTube video, as markdown (with metadata) or structured JSON. Drop the output straight into summarizers, search indexes, or AI pipelines.
 
 | Parameter           | Type    | Default      | Description                                    |
 | ------------------- | ------- | ------------ | ---------------------------------------------- |
@@ -642,7 +642,7 @@ Fetch the transcript for any YouTube video — as markdown (with metadata) or st
 
 ### 2. `get_youtube_video_info` <sub>· **FREE**</sub>
 
-Basic metadata (title, author, thumbnail) plus the list of available transcript languages — call this before `get_youtube_transcript` to pick a language. No credit used.
+Basic metadata (title, author, thumbnail) plus the list of available transcript languages: call this before `get_youtube_transcript` to pick a language.
 
 | Parameter   | Type   | Default      | Description                                     |
 | ----------- | ------ | ------------ | ------------------------------------------------ |
@@ -668,14 +668,14 @@ Rich video metadata without needing captions: title, view/like-count text, publi
 **Example prompt:**
 
 ```txt
-Get the view count, publish date, and tags for https://youtu.be/dQw4w9WgXcQ.
+Get the view count, publish date, and tags for https://youtu.be/UF8uR6Z6KLc.
 ```
 
 ---
 
 ### 4. `search_youtube`
 
-Search YouTube for videos, channels, playlists, or movies. Filter by type, sort, upload date, or duration, and paginate with a continuation token — perfect for discovery, research, and building content pipelines.
+Search YouTube for videos, channels, playlists, or movies. Filter by type, sort, upload date, or duration, and paginate with a continuation token, perfect for discovery, research, and building content pipelines.
 
 | Parameter      | Type   | Default      | Description                          |
 | -------------- | ------ | ------------ | ------------------------------------ |
@@ -683,7 +683,7 @@ Search YouTube for videos, channels, playlists, or movies. Filter by type, sort,
 | `search_type`  | string | `"video"`    | `"video"`, `"channel"`, `"playlist"`, or `"movie"` (first call only) |
 | `sort`         | string | `"relevance"` | First-page sort: `"relevance"` or `"views"` |
 | `upload_date`  | string | _none_       | First-page upload window (videos only): `hour`, `today`, `week`, `month`, `year` |
-| `duration`     | string | _none_       | First-page duration bucket (videos only): `short` (under 4m), `medium` (4–20m), `long` (over 20m) |
+| `duration`     | string | _none_       | First-page duration bucket (videos only): `short` (under 4m), `medium` (4-20m), `long` (over 20m) |
 | `continuation` | string | `null`       | Token from a prior call for next page |
 
 **Cost:** 1 credit per page (~20 results per page).
@@ -713,7 +713,7 @@ Check the returned tabs before calling `get_channel_sections` or `list_channel_v
 
 ### 6. `get_channel_latest_videos` <sub>· **FREE**</sub>
 
-Get the ~15 most recent uploads from any channel via RSS — no credits required. Perfect for monitoring, daily recaps, or triggering downstream pipelines.
+Get the ~15 most recent uploads from any channel via RSS. Perfect for monitoring, daily recaps, or triggering downstream pipelines.
 
 | Parameter | Type   | Default      | Description                                  |
 | --------- | ------ | ------------ | -------------------------------------------- |
@@ -724,7 +724,7 @@ Get the ~15 most recent uploads from any channel via RSS — no credits required
 **Example prompt:**
 
 ```txt
-Every morning, list new uploads from @lexfridman and @hubermanlab.
+Every morning, list new uploads from @NASA and @natgeo.
 ```
 
 ---
@@ -744,7 +744,7 @@ Search inside one specific channel for videos matching a query. Great for resear
 **Example prompt:**
 
 ```txt
-On Andrew Huberman's channel, find every video about sleep.
+On @NASA's channel, find every video about the Moon landing.
 ```
 
 ---
@@ -778,7 +778,7 @@ Paginated list of the playlists on a channel (id, title, URL, video-count text, 
 
 ### 10. `list_channel_posts`
 
-Paginated list of a channel's community (Posts tab) content — text, publish time, like-count text, and attachments (image, multi-image, video, playlist, or poll). Channels without a community tab return an empty results list, not an error.
+Paginated list of a channel's community (Posts tab) content: text, publish time, like-count text, and attachments (image, multi-image, video, playlist, or poll). Channels without a community tab return an empty results list, not an error.
 
 | Parameter      | Type   | Default | Description                                          |
 | -------------- | ------ | ------- | ------------------------------------------------------ |
@@ -791,7 +791,7 @@ Paginated list of a channel's community (Posts tab) content — text, publish ti
 
 ### 11. `get_channel_sections`
 
-The curated, grouped sections of a channel page — titled shelves of videos, playlists, shorts, or featured channels, in the channel's own order. Not paginated.
+The curated, grouped sections of a channel page: titled shelves of videos, playlists, shorts, or featured channels, in the channel's own order. Not paginated.
 
 | Parameter | Type   | Default      | Description                                                     |
 | --------- | ------ | ------------ | ---------------------------------------------------------------- |
@@ -827,9 +827,9 @@ Get every video in a YouTube playlist (PL/UU/LL/FL/OL IDs supported). Process en
 | ⚖️ **Compare perspectives**    | "Compare arguments in these two videos: [URL1] [URL2]"                                          |
 | 🌐 **Translate**               | "Translate this video's transcript to Spanish: [URL]"                                           |
 | ✍️ **Repurpose content**        | "Turn this video into a 1,500-word blog post: [URL]"                                            |
-| 📡 **Monitor a creator**       | "Each morning, list new uploads from @hubermanlab and tell me which to watch."                  |
-| 🏛️ **Build a content database** | "Pull every video from @veritasium and store title + transcript."                              |
-| 🎯 **Competitor analysis**      | "Search inside @MKBHD for any video about [competitor product] and summarize the takeaways."   |
+| 📡 **Monitor a channel**       | "Each morning, list new uploads from @TED and tell me which to watch."                  |
+| 🏛️ **Build a content database** | "Pull every video from @NASA and store title + transcript."                              |
+| 🎯 **Competitor analysis**      | "Search inside @NASA for any video about [a specific mission or topic] and summarize the takeaways."   |
 
 ---
 
