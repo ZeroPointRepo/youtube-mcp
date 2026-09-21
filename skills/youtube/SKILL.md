@@ -74,8 +74,10 @@ This plugin bundles the hosted **`transcriptapi` MCP server** (`https://transcri
 - Much better than fetching a whole channel and filtering yourself.
 
 ### `list_channel_videos`: 1 credit per page
-- `channel` (string, required on first call), `tab` (string, default `"videos"`): `videos` (uploads), `shorts`, or `streams`. Repeat the same `tab` when paginating. `continuation` (string, optional).
+- `channel` (string, required on first call), `tab` (string, default `"videos"`): `videos` (uploads), `shorts`, or `streams`. `sort` (string, optional): `latest`, `popular`, or `oldest`. Repeat the same `tab` AND `sort` when paginating. `continuation` (string, optional).
 - Paginated full upload history. Use only when the user genuinely wants the whole catalogue.
+- Existing calls are untouched: omitting sort returns the uploads feed exactly as before. sort=latest is a different view (YouTube's Videos tab, Shorts excluded), not a re-ordering of it. Omitted, `tab: "videos"` reads the uploads playlist (~100/page, `playlist_info` populated, Shorts mixed in, members-only videos excluded). Any `sort` value reads the channel Videos tab (~30/page, `playlist_info: null`, long-form only, members-only videos included). They are different sets, not one list in two orders. A sorted page holds ~30 items instead of ~100, so paging a whole catalogue with `sort` set costs roughly 3.3x the pages and 3.3x the credits. Omit `sort` when you just want newest-first. `tab: "shorts"` / `tab: "streams"` read the same feed either way.
+- Every item carries `members_only`, `true` only when YouTube badges it "Members only", and those items have no `viewCountText`. `tab: "streams"` items carry `lengthText` and `publishedTimeText`; `tab: "shorts"` returns `null` for both.
 
 ### `list_channel_playlists`: 1 credit per page
 - `channel` (string, required on first call), `continuation` (string, optional).
