@@ -760,19 +760,9 @@ List a channel's feed with pagination. Use `tab` to choose the uploads feed (def
 | `sort`         | string | `null`       | `latest`, `popular`, or `oldest`. Omit for the uploads feed. Repeat the same value when paginating. |
 | `continuation` | string | `null`       | Pagination token                     |
 
-Existing calls are untouched: omitting sort returns the uploads feed exactly as before. sort=latest is a different view (YouTube's Videos tab, Shorts excluded), not a re-ordering of it.
+**Sorting.** Add sort=latest, popular, or oldest to channel/videos to get a channel's videos in the order you want, for example its most-popular uploads first. A sorted page returns about 30 videos (an unsorted page returns about 100), and every page costs the same 1 credit.
 
-| | `tab: "videos"`, no `sort` | `tab: "videos"` + any `sort` |
-| --- | --- | --- |
-| Source | uploads playlist | channel Videos tab |
-| Page size | ~100 | ~30 |
-| `playlist_info` | populated | `null` |
-| Shorts | mixed in | excluded (use `tab: "shorts"`) |
-| Members-only videos | excluded | included, flagged `members_only: true` |
-
-Sort reads ~3.3x more pages (~30/page vs ~100), so it costs ~3.3x credits. Use it when you need ordering; most integrations don't.
-
-`tab: "shorts"` and `tab: "streams"` read the same feed either way, so there `sort` only reorders.
+When paging, send the same sort on each request.
 
 Every item carries **`members_only`**: `true` only when YouTube badges the video "Members only", and those items have no `viewCountText`, because YouTube does not publish view counts for membership content. It is always `false` on the uploads feed, on `tab: "shorts"`, and on playlists.
 
