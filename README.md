@@ -762,6 +762,8 @@ List a channel's feed with pagination. Use `tab` to choose the uploads feed (def
 
 **Sorting.** Add sort=latest, popular, or oldest to channel/videos to get a channel's videos in the order you want, for example its most-popular uploads first. A sorted page returns about 30 videos (an unsorted page returns about 100), and every page costs the same 1 credit.
 
+Sorted results come from YouTube's Videos tab (long-form only); Shorts have their own tab=shorts feed.
+
 When paging, send the same sort on each request.
 
 Every item carries **`members_only`**: `true` only when YouTube badges the video "Members only", and those items have no `viewCountText`, because YouTube does not publish view counts for membership content. It is always `false` on the uploads feed, on `tab: "shorts"`, and on playlists.
