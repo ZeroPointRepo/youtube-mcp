@@ -76,7 +76,7 @@ This plugin bundles the hosted **`transcriptapi` MCP server** (`https://transcri
 ### `list_channel_videos`: 1 credit per page
 - `channel` (string, required on first call), `tab` (string, default `"videos"`): `videos` (uploads), `shorts`, or `streams`. `sort` (string, optional): `latest`, `popular`, or `oldest`. Repeat the same `tab` AND `sort` when paginating. `continuation` (string, optional).
 - Paginated full upload history. Use only when the user genuinely wants the whole catalogue.
-- **Sorting.** Add sort=latest, popular, or oldest to channel/videos to get a channel's videos in the order you want, for example its most-popular uploads first. A sorted page returns about 30 videos (an unsorted page returns about 100), and every page costs the same 1 credit. When paging, send the same sort on each request.
+- **Sorting.** Add sort=latest, popular, or oldest to channel/videos to get a channel's videos in the order you want, for example its most-popular uploads first. A sorted page returns about 30 videos (an unsorted page returns about 100), and every page costs the same 1 credit. Sorted results come from YouTube's Videos tab (long-form only); Shorts have their own tab=shorts feed. When paging, send the same sort on each request.
 - Every item carries `members_only`, `true` only when YouTube badges it "Members only", and those items have no `viewCountText`. `tab: "streams"` items carry `lengthText` and `publishedTimeText`; `tab: "shorts"` returns `null` for both.
 
 ### `list_channel_playlists`: 1 credit per page
